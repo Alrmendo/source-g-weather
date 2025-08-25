@@ -81,7 +81,10 @@ flutter run
 flutter run -d windows  # hoặc macos/linux
 ```
 ### Cấu trúc Dự án
-ib/
+
+
+```bash
+lib/
 ├── main.dart                    # Điểm vào ứng dụng
 ├── app.dart                     # Widget app chính
 ├── core/                        # Tiện ích core
@@ -99,3 +102,4 @@ ib/
 └── subscription/           # Tính năng đăng ký email
 ├── pages/             # Các trang đăng ký
 └── widgets/           # Widgets đăng ký
+```
