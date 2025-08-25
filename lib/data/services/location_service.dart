@@ -12,7 +12,7 @@ class LocationException implements Exception {
 }
 
 class LocationService {
-  /// Check if location services are enabled and permissions are granted
+  // Check if location services are enabled and permissions are granted
   Future<bool> isLocationAvailable() async {
     try {
       // Check if location services are enabled
@@ -30,7 +30,7 @@ class LocationService {
     }
   }
 
-  /// Request location permission from the user
+  // Request location permission from the user
   Future<bool> requestLocationPermission() async {
     try {
       // Check if location services are enabled
@@ -72,7 +72,7 @@ class LocationService {
     }
   }
 
-  /// Get current position with high accuracy
+  // Get current position with high accuracy
   Future<Position> getCurrentPosition() async {
     try {
       // Ensure we have permission first
@@ -115,7 +115,7 @@ class LocationService {
     }
   }
 
-  /// Get last known position (faster but potentially less accurate)
+  // Get last known position (faster but potentially less accurate)
   Future<Position?> getLastKnownPosition() async {
     try {
       // Check if we have permission
@@ -132,7 +132,7 @@ class LocationService {
     }
   }
 
-  /// Get location with fallback to last known position
+  // Get location with fallback to last known position
   Future<Position> getLocationWithFallback() async {
     try {
       // Try to get current position first
@@ -149,7 +149,7 @@ class LocationService {
     }
   }
 
-  /// Open app settings for location permissions
+  // Open app settings for location permissions
   Future<bool> openAppSettings() async {
     try {
       return await Geolocator.openAppSettings();
@@ -158,7 +158,7 @@ class LocationService {
     }
   }
 
-  /// Open location settings
+  // Open location settings
   Future<bool> openLocationSettings() async {
     try {
       return await Geolocator.openLocationSettings();
@@ -167,7 +167,7 @@ class LocationService {
     }
   }
 
-  /// Calculate distance between two coordinates
+  // Calculate distance between two coordinates
   double calculateDistance(
     double startLatitude,
     double startLongitude,
@@ -182,7 +182,7 @@ class LocationService {
     );
   }
 
-  /// Check if location has changed significantly
+  // Check if location has changed significantly
   bool hasLocationChangedSignificantly(
     Position? oldPosition,
     Position newPosition, {
@@ -200,7 +200,7 @@ class LocationService {
     return distance > thresholdMeters;
   }
 
-  /// Format coordinates for display
+  // Format coordinates for display
   String formatCoordinates(double latitude, double longitude) {
     final latDirection = latitude >= 0 ? 'N' : 'S';
     final lonDirection = longitude >= 0 ? 'E' : 'W';
@@ -209,7 +209,7 @@ class LocationService {
         '${longitude.abs().toStringAsFixed(4)}°$lonDirection';
   }
 
-  /// Get location accuracy description
+  // Get location accuracy description
   String getAccuracyDescription(LocationAccuracy accuracy) {
     switch (accuracy) {
       case LocationAccuracy.lowest:

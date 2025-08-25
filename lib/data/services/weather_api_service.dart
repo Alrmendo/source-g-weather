@@ -21,7 +21,7 @@ class WeatherApiService {
 
   WeatherApiService({http.Client? client}) : _client = client ?? http.Client();
 
-  /// Get current weather for a city
+  // Get current weather for a city
   Future<CurrentWeatherResponse> getCurrentWeather(String query) async {
     try {
       final uri = Uri.parse('$_baseUrl${ApiConstants.currentWeatherEndpoint}')
@@ -51,7 +51,7 @@ class WeatherApiService {
     }
   }
 
-  /// Get weather forecast for a city
+  // Get weather forecast for a city
   Future<ForecastWeatherResponse> getForecastWeather(
     String query, {
     int days = ApiConstants.defaultForecastDays,
@@ -89,7 +89,7 @@ class WeatherApiService {
     }
   }
 
-  /// Get current weather by coordinates
+  // Get current weather by coordinates
   Future<CurrentWeatherResponse> getCurrentWeatherByCoordinates(
     double latitude,
     double longitude,
@@ -108,7 +108,7 @@ class WeatherApiService {
     return getForecastWeather(query, days: days);
   }
 
-  /// Validate if a city exists and return basic location info
+  // Validate if a city exists and return basic location info
   Future<bool> validateCity(String query) async {
     try {
       await getCurrentWeather(query);

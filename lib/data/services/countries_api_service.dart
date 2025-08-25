@@ -70,7 +70,7 @@ class CountriesApiService {
 
   CountriesApiService({http.Client? client}) : _client = client ?? http.Client();
 
-  /// Get all countries from REST Countries API
+  // Get all countries from REST Countries API
   Future<List<Country>> getAllCountries() async {
     // Return cached data if available and not expired
     if (_cachedCountries != null && 
@@ -125,7 +125,7 @@ class CountriesApiService {
     }
   }
 
-  /// Search countries by query
+  // Search countries by query
   Future<List<Country>> searchCountries(String query) async {
     if (query.trim().isEmpty) return [];
 
@@ -173,7 +173,7 @@ class CountriesApiService {
     }
   }
 
-  /// Get countries by region
+  // Get countries by region
   Future<List<Country>> getCountriesByRegion(String region) async {
     try {
       final uri = Uri.parse('$_baseUrl/region/$region');
@@ -201,7 +201,7 @@ class CountriesApiService {
     }
   }
 
-  /// Clear cache
+  // Clear cache
   void clearCache() {
     _cachedCountries = null;
     _lastFetch = null;

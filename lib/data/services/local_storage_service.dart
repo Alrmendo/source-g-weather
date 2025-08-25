@@ -8,7 +8,7 @@ class LocalStorageService {
 
   LocalStorageService(this._prefs);
 
-  /// Save a search to history
+  // Save a search to history
   Future<void> saveSearchHistory(String city, String displayName) async {
     try {
       final history = SearchHistory(
@@ -39,7 +39,7 @@ class LocalStorageService {
     }
   }
 
-  /// Get search history for today
+  // Get search history for today
   Future<List<SearchHistory>> getSearchHistory() async {
     try {
       final jsonString = _prefs.getString(StorageConstants.recentSearchesKey);
@@ -58,7 +58,7 @@ class LocalStorageService {
     }
   }
 
-  /// Clear all search history
+  // Clear all search history
   Future<void> clearSearchHistory() async {
     try {
       await _prefs.remove(StorageConstants.recentSearchesKey);
@@ -67,7 +67,7 @@ class LocalStorageService {
     }
   }
 
-  /// Save the last searched city
+  // Save the last searched city
   Future<void> saveLastSearchCity(String city) async {
     try {
       await _prefs.setString(StorageConstants.lastSearchCityKey, city);
@@ -76,7 +76,7 @@ class LocalStorageService {
     }
   }
 
-  /// Get the last searched city
+  // Get the last searched city
   String? getLastSearchCity() {
     try {
       return _prefs.getString(StorageConstants.lastSearchCityKey);
@@ -86,7 +86,7 @@ class LocalStorageService {
     }
   }
 
-  /// Clean up old search history (older than today)
+  // Clean up old search history (older than today)
   Future<void> cleanupOldHistory() async {
     try {
       final currentHistory = await getSearchHistory();
@@ -97,25 +97,25 @@ class LocalStorageService {
     }
   }
 
-  /// Private helper to save search history list
+  // Private helper to save search history list
   Future<void> _saveSearchHistoryList(List<SearchHistory> history) async {
     final jsonList = history.map((item) => item.toJson()).toList();
     final jsonString = jsonEncode(jsonList);
     await _prefs.setString(StorageConstants.recentSearchesKey, jsonString);
   }
 
-  /// Check if there's any search history
+  // Check if there's any search history
   bool hasSearchHistory() {
     return _prefs.containsKey(StorageConstants.recentSearchesKey);
   }
 
-  /// Get search history count
+  // Get search history count
   Future<int> getSearchHistoryCount() async {
     final history = await getSearchHistory();
     return history.length;
   }
 
-  /// Remove a specific search from history
+  // Remove a specific search from history
   Future<void> removeSearchFromHistory(String city) async {
     try {
       final history = await getSearchHistory();
@@ -128,7 +128,7 @@ class LocalStorageService {
     }
   }
 
-  /// Remove a specific search history item (alias for removeSearchFromHistory)
+  // Remove a specific search history item (alias for removeSearchFromHistory)
   Future<void> removeSearchHistoryItem(String city) async {
     await removeSearchFromHistory(city);
   }
