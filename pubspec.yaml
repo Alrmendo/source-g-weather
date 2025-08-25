@@ -1,0 +1,57 @@
+name: g_weather_forecast
+description: A beautiful weather forecast application with subscription features
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management
+  flutter_riverpod: ^2.4.9
+
+  # HTTP Client
+  http: ^1.1.0
+
+  # Local Storage
+  shared_preferences: ^2.2.2
+
+  # JSON Serialization
+  json_annotation: ^4.8.1
+
+  # Environment Variables
+  flutter_dotenv: ^6.0.0
+
+  # Date Formatting
+  intl: ^0.20.2
+
+  # Geolocation
+  geolocator: ^14.0.2
+
+  # URL Launcher for email links
+  url_launcher: ^6.2.1
+
+
+
+  # Routing
+  go_router: ^16.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Code generation
+  build_runner: ^2.4.7
+  json_serializable: ^6.7.1
+  
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - .env

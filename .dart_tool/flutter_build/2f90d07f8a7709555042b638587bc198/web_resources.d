@@ -1,0 +1,1 @@
+ /Users/nguyentriet/Desktop/g-weather/build/web/manifest.json:  /Users/nguyentriet/Desktop/g-weather/web/index.html /Users/nguyentriet/Desktop/g-weather/web/manifest.json
