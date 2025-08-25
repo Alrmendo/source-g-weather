@@ -1,46 +1,44 @@
 # 🌤️ G-Weather Forecast
 
-A beautiful, responsive Flutter web application for weather forecasting with email subscription features. Built with Flutter 3, designed to work seamlessly on web, mobile, and desktop platforms.
+Ứng dụng dự báo thời tiết đẹp mắt, responsive được xây dựng bằng Flutter 3, hoạt động mượt mà trên web, mobile và desktop. Tích hợp tính năng đăng ký nhận thông báo qua email.
 
-![Weather Dashboard](https://via.placeholder.com/800x400/5F7CF6/FFFFFF?text=G-Weather+Dashboard)
+## ✨ Tính năng
 
-## ✨ Features
+### 🌍 Tính năng Thời tiết
+- **Tìm kiếm theo Thành phố**: Tìm kiếm thời tiết theo tên thành phố với gợi ý thông minh
+- **Vị trí Hiện tại**: Xem thời tiết tại vị trí hiện tại (sử dụng geolocation)
+- **Thời tiết Hiện tại**: Cập nhật thời tiết thời gian thực với nhiệt độ, gió, độ ẩm
+- **Dự báo 4 Ngày**: Dự báo mở rộng với khả năng tải thêm (lên đến 10 ngày)
+- **Lịch sử Tìm kiếm**: Lưu các tìm kiếm gần đây để truy cập nhanh
 
-### 🌍 Weather Features
-- **City Search**: Search weather by city name with smart auto-complete
-- **Current Location**: Get weather for your current location (geolocation)
-- **Current Weather**: Real-time weather with temperature, wind, humidity
-- **4-Day Forecast**: Extended forecast with load more functionality (up to 10 days)
-- **Search History**: Recent searches saved locally for quick access
+### 📧 Đăng ký Email (Xác nhận 2 bước)
+- **Đăng ký/Hủy đăng ký**: Thông báo dự báo hàng ngày qua email
+- **Xác nhận 2 bước**: Yêu cầu xác nhận email an toàn
+- **Tích hợp Firebase**: Sẵn sàng với Firebase Auth + Cloud Functions
+- **Hỗ trợ SendGrid**: Tích hợp dịch vụ email có thể cấu hình
 
-### 📧 Email Subscription (Double Opt-in)
-- **Subscribe/Unsubscribe**: Email-based daily forecast notifications
-- **Double Opt-in**: Secure email confirmation required
-- **Firebase Integration**: Ready for Firebase Auth + Cloud Functions
-- **SendGrid Support**: Configurable email service integration
+### 🎨 Tính năng UI/UX
+- **Thiết kế Responsive**: Tối ưu cho desktop (≥1024px), tablet (768-1024px), và mobile (<768px)
+- **Giao diện Đẹp**: Phối màu tùy chỉnh phù hợp với thiết kế
+- **Trạng thái Loading**: Skeleton loaders và animation mượt mà
+- **Xử lý Lỗi**: Thông báo lỗi thân thiện và cơ chế thử lại
+- **Chế độ Sáng/Tối**: Hỗ trợ theme theo hệ thống
 
-### 🎨 UI/UX Features
-- **Responsive Design**: Optimized for desktop (≥1024px), tablet (768-1024px), and mobile (<768px)
-- **Beautiful Theme**: Custom color scheme matching the design mockup
-- **Loading States**: Skeleton loaders and smooth animations
-- **Error Handling**: Graceful error messages and retry mechanisms
-- **Dark/Light Theme**: System theme support
+### 🔧 Tính năng Kỹ thuật
+- **Flutter 3 & Dart 3**: Phiên bản ổn định mới nhất
+- **Riverpod**: Quản lý state hiện đại
+- **WeatherAPI.com**: Nguồn dữ liệu thời tiết đáng tin cậy
+- **Local Storage**: Lưu trữ lịch sử tìm kiếm
+- **PWA Ready**: Khả năng Progressive Web App
 
-### 🔧 Technical Features
-- **Flutter 3 & Dart 3**: Latest stable versions
-- **Riverpod**: Modern state management
-- **WeatherAPI.com**: Reliable weather data source
-- **Local Storage**: Persistent search history
-- **PWA Ready**: Progressive Web App capabilities
+## 🚀 Bắt đầu nhanh
 
-## 🚀 Quick Start
+### Yêu cầu
+- Flutter 3.10.0 trở lên
+- Dart 3.0.0 trở lên
+- Tài khoản WeatherAPI.com miễn phí
 
-### Prerequisites
-- Flutter 3.10.0 or later
-- Dart 3.0.0 or later
-- WeatherAPI.com free account
-
-### 1. Clone & Install
+### 1. Clone & Cài đặt
 
 ```bash
 git clone <your-repo-url>
@@ -48,21 +46,21 @@ cd G-Weather
 flutter pub get
 ```
 
-### 2. Configure Environment
+### 2. Cấu hình Môi trường
 
-Create a `.env` file in the root directory:
+Tạo file `.env` trong thư mục gốc:
 
 ```bash
 cp env.example .env
 ```
 
-Edit `.env` with your API keys:
+Chỉnh sửa `.env` với API keys của bạn:
 
 ```env
-# Required: Get free key from https://weatherapi.com/
+# Bắt buộc: Lấy key miễn phí từ https://weatherapi.com/
 WEATHER_API_KEY=your_weather_api_key_here
 
-# Optional: Firebase configuration for email features
+# Tùy chọn: Cấu hình Firebase cho tính năng email
 FIREBASE_API_KEY=your_firebase_api_key
 FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
 FIREBASE_PROJECT_ID=your-project-id
@@ -70,170 +68,103 @@ FIREBASE_STORAGE_BUCKET=your-project.appspot.com
 FIREBASE_MESSAGING_SENDER_ID=123456789
 FIREBASE_APP_ID=your-app-id
 
-# Optional: SendGrid for email sending
+# Tùy chọn: SendGrid cho gửi email
 SENDGRID_API_KEY=your_sendgrid_api_key
 SENDGRID_FROM_EMAIL=noreply@your-domain.com
 ```
 
-### 3. Generate Code
+### 3. Chạy ứng dụng
 
 ```bash
-dart run build_runner build
-```
-
-### 4. Run the App
-
-```bash
-# Web (recommended)
+# Web (khuyến nghị)
 flutter run -d chrome
 
-# Mobile (if using mobile device/simulator)
+# Mobile (nếu sử dụng thiết bị/giả lập)
 flutter run
 
 # Desktop
-flutter run -d windows  # or macos/linux
+flutter run -d windows  # hoặc macos/linux
 ```
 
-## 🔧 Configuration Guide
+## 🔧 Hướng dẫn Cấu hình
 
-### WeatherAPI.com Setup (Required)
+### Cài đặt WeatherAPI.com (Bắt buộc)
 
-1. Visit [WeatherAPI.com](https://weatherapi.com/)
-2. Sign up for a free account
-3. Get your API key from the dashboard
-4. Add it to your `.env` file as `WEATHER_API_KEY`
+1. Truy cập [WeatherAPI.com](https://weatherapi.com/)
+2. Đăng ký tài khoản miễn phí
+3. Lấy API key từ dashboard
+4. Thêm vào file `.env` với tên `WEATHER_API_KEY`
 
-**Free tier includes:**
-- 1 million calls/month
-- Real-time weather
-- 10-day forecast
-- Search functionality
-
-### Firebase Setup (Optional - for Email Features)
-
-#### 1. Create Firebase Project
-```bash
-# Install Firebase CLI
-npm install -g firebase-tools
-
-# Login to Firebase
-firebase login
-
-# Initialize project
-firebase init
-```
-
-#### 2. Configure Firebase
-1. Go to [Firebase Console](https://console.firebase.google.com/)
-2. Create a new project
-3. Enable **Authentication** with Email/Link sign-in
-4. Enable **Firestore Database**
-5. Get configuration from Project Settings
-6. Add values to `.env` file
-
-#### 3. Firebase Auth Email Links
-Configure email link authentication:
-1. Go to Authentication > Sign-in method
-2. Enable "Email link (passwordless sign-in)"
-3. Add your domain to authorized domains
-
-#### 4. Cloud Functions (for sending emails)
-```bash
-# In functions/ directory
-npm install sendgrid
-
-# Deploy functions
-firebase deploy --only functions
-```
-
-### SendGrid Setup (Optional - for Email Sending)
-
-1. Create [SendGrid account](https://sendgrid.com/)
-2. Get API key from Settings > API Keys
-3. Verify sender identity
-4. Add `SENDGRID_API_KEY` and `SENDGRID_FROM_EMAIL` to `.env`
+**Gói miễn phí bao gồm:**
+- 1 triệu lượt gọi/tháng
+- Thời tiết thời gian thực
+- Dự báo 10 ngày
+- Chức năng tìm kiếm
 
 ## 📱 Responsive Breakpoints
 
 ### Desktop (≥1024px)
-- Sidebar layout: Search form on left, weather display on right
-- 4-column forecast grid
-- Full subscription form visible
+- Layout sidebar: Form tìm kiếm bên trái, hiển thị thời tiết bên phải
+- Lưới dự báo 4 cột
+- Form đăng ký đầy đủ
 
 ### Tablet (768px - 1024px)
-- Split top section: Search + current weather side by side
-- 2-column forecast grid
-- Compact subscription form
+- Phần trên chia đôi: Tìm kiếm + thời tiết hiện tại cạnh nhau
+- Lưới dự báo 2 cột
+- Form đăng ký gọn nhẹ
 
 ### Mobile (<768px)
-- Stacked vertical layout
-- Single-column forecast grid
-- Mobile-optimized subscription form
+- Layout dọc
+- Lưới dự báo 1 cột
+- Form đăng ký tối ưu cho mobile
 
-## 🛠️ Development
+## 🛠️ Phát triển
 
-### Project Structure
-```
-lib/
-├── main.dart                    # App entry point
-├── app.dart                     # Main app widget
-├── core/                        # Core utilities
-│   ├── constants/              # API & storage constants
-│   ├── env/                    # Environment configuration
-│   └── theme/                  # App theming
+### Cấu trúc Dự án
+ib/
+├── main.dart                    # Điểm vào ứng dụng
+├── app.dart                     # Widget app chính
+├── core/                        # Tiện ích core
+│   ├── constants/              # Hằng số API & storage
+│   ├── env/                    # Cấu hình môi trường
+│   └── theme/                  # Theme ứng dụng
 ├── data/
-│   ├── models/                 # Data models (JSON serializable)
-│   └── services/               # API & storage services
+│   ├── models/                 # Models dữ liệu (JSON serializable)
+│   └── services/               # Services API & storage
 └── features/
-    ├── weather/                # Weather feature
-    │   ├── pages/             # Weather pages
-    │   ├── providers/         # Riverpod providers
-    │   └── widgets/           # Weather widgets
-    └── subscription/           # Email subscription feature
-        ├── pages/             # Subscription pages
-        └── widgets/           # Subscription widgets
-```
+├── weather/                # Tính năng thời tiết
+│   ├── pages/             # Các trang thời tiết
+│   ├── providers/         # Providers Riverpod
+│   └── widgets/           # Widgets thời tiết
+└── subscription/           # Tính năng đăng ký email
+├── pages/             # Các trang đăng ký
+└── widgets/           # Widgets đăng ký
 
-### Key Dependencies
-- `flutter_riverpod`: State management
-- `http`: API calls
-- `shared_preferences`: Local storage
-- `json_serializable`: JSON parsing
-- `geolocator`: Location services
-- `flutter_dotenv`: Environment variables
-- `intl`: Date formatting
 
-### Adding New Features
+### Dependencies Chính
+- `flutter_riverpod`: Quản lý state
+- `http`: Gọi API
+- `shared_preferences`: Lưu trữ local
+- `json_serializable`: Parse JSON
+- `geolocator`: Dịch vụ vị trí
+- `flutter_dotenv`: Biến môi trường
+- `intl`: Định dạng ngày tháng
 
-1. **New weather data**: Extend models in `data/models/`
-2. **New UI components**: Add to appropriate `widgets/` folder
-3. **New state**: Add providers in `features/weather/providers/`
-4. **New services**: Add to `data/services/`
+## 🌐 Triển khai
 
-### Code Generation
+### Triển khai Web
 ```bash
-# Regenerate JSON serialization code
-dart run build_runner build
-
-# Clean and rebuild
-dart run build_runner build --delete-conflicting-outputs
-```
-
-## 🌐 Deployment
-
-### Web Deployment
-```bash
-# Build for web
+# Build cho web
 flutter build web --release
 
-# Deploy to Firebase Hosting (if configured)
+# Triển khai lên Firebase Hosting (nếu đã cấu hình)
 firebase deploy --only hosting
 
-# Deploy to GitHub Pages, Netlify, or Vercel
-# Upload contents of build/web/ directory
+# Triển khai lên GitHub Pages, Netlify, hoặc Vercel
+# Upload nội dung thư mục build/web/
 ```
 
-### Mobile Deployment
+### Triển khai Mobile
 ```bash
 # Android
 flutter build apk --release
@@ -243,7 +174,7 @@ flutter build appbundle --release
 flutter build ios --release
 ```
 
-### Desktop Deployment
+### Triển khai Desktop
 ```bash
 # Windows
 flutter build windows --release
@@ -255,94 +186,84 @@ flutter build macos --release
 flutter build linux --release
 ```
 
-## 🧪 Testing
+## 🧪 Kiểm thử
 
-### Run Tests
+### Chạy Tests
 ```bash
-# All tests
+# Tất cả tests
 flutter test
 
-# Specific test file
+# File test cụ thể
 flutter test test/weather_service_test.dart
 
-# With coverage
+# Với coverage
 flutter test --coverage
 ```
 
-### Demo Mode
-Without API keys, the app runs in demo mode with:
-- Mock weather data
-- Simulated API responses
-- Local-only email subscription simulation
+### Chế độ Demo
+Khi không có API keys, ứng dụng chạy ở chế độ demo với:
+- Dữ liệu thời tiết giả lập
+- Phản hồi API mô phỏng
+- Mô phỏng đăng ký email local
 
-## 🐛 Troubleshooting
+## 🐛 Xử lý Sự cố
 
-### Common Issues
+### Vấn đề Thường gặp
 
 #### Build Runner Fails
 ```bash
-# Clean and retry
+# Clean và thử lại
 flutter clean
 flutter pub get
 dart run build_runner clean
 dart run build_runner build
 ```
 
-#### Location Permission Denied
-- Ensure HTTPS for web deployment
-- Check browser location permissions
-- Verify app permissions on mobile
+#### Từ chối Quyền Vị trí
+- Đảm bảo HTTPS cho triển khai web
+- Kiểm tra quyền vị trí trên trình duyệt
+- Xác minh quyền ứng dụng trên mobile
 
-#### Email Features Not Working
-- Check Firebase configuration
-- Verify SendGrid API key
-- Check Cloud Functions logs
-- Ensure email templates are deployed
+#### Tính năng Email Không Hoạt động
+- Kiểm tra cấu hình Firebase
+- Xác minh SendGrid API key
+- Kiểm tra logs Cloud Functions
+- Đảm bảo templates email đã được triển khai
 
-#### Weather API Errors
-- Verify API key is correct
-- Check API usage limits
-- Ensure network connectivity
-- Check city name spelling
+#### Lỗi Weather API
+- Xác minh API key chính xác
+- Kiểm tra giới hạn sử dụng API
+- Đảm bảo kết nối mạng
+- Kiểm tra chính tả tên thành phố
 
-### Debug Mode
-Set `kDebugMode` to see detailed logs:
-```dart
-import 'package:flutter/foundation.dart';
+## 📄 Giấy phép
 
-if (kDebugMode) {
-  print('Debug information...');
-}
-```
+Dự án này được cấp phép theo Giấy phép MIT - xem file [LICENSE](LICENSE) để biết chi tiết.
 
-## 📄 License
+## 🤝 Đóng góp
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+1. Fork repository
+2. Tạo nhánh tính năng
+3. Thực hiện thay đổi
+4. Thêm tests nếu cần
+5. Gửi pull request
 
-## 🤝 Contributing
+## 🆘 Hỗ trợ
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+- **Issues**: Tạo issue trên GitHub
+- **Email**: [Email hỗ trợ của bạn]
+- **Tài liệu**: Xem thư mục `/docs` để biết hướng dẫn chi tiết
 
-## 🆘 Support
+## 🎯 Lộ trình
 
-- **Issues**: Create an issue on GitHub
-- **Email**: [Your email for support]
-- **Documentation**: Check the `/docs` folder for detailed guides
-
-## 🎯 Roadmap
-
-- [ ] Weather alerts and notifications
-- [ ] Multiple location bookmarks
-- [ ] Weather maps integration
-- [ ] Social sharing features
-- [ ] Offline mode support
-- [ ] Widget/tile support
-- [ ] Voice search integration
+- [ ] Cảnh báo và thông báo thời tiết
+- [ ] Đánh dấu nhiều vị trí
+- [ ] Tích hợp bản đồ thời tiết
+- [ ] Tính năng chia sẻ xã hội
+- [ ] Hỗ trợ chế độ offline
+- [ ] Hỗ trợ widget/tile
+- [ ] Tích hợp tìm kiếm bằng giọng nói
 
 ---
 
-Built with ❤️ using Flutter & WeatherAPI.com
+Xây dựng với ❤️ bằng Flutter & WeatherAPI.com
